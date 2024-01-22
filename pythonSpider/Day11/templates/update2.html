@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改页面</title>
+    <!-- 解决页面图标显示问题 -->
+    <link rel="shortcut icon" href="static/favicon.ico">
+</head>
+<body>
+  <h1>修改学生</h1>
+  <form action="/update.html" methdo="get">
+      <label for="stu_id">学号:</label><input type="text" id='stu_id' name="stu_id" placeholder="请输入学号...">
+      <input type="submit" value="查询">
+  </form>
+  {% if res.msg == 'OK' %}
+  <table border="1px" cellpadding="0px" cellspacing="0px" width="300px">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>成绩</th>
+        </tr>
+      <!-- res.data 现在取出来的是dictionary字典数据, 使用for取数据 -->
+      <!-- 方式一 -->
+        <tr>
+            {% for stu, value in res.data.items() %}
+            <td>{{value}}</td>
+            {% endfor %}
+        </tr>
+      <!-- 不需要for遍历, 在模板语言中字典直接用.方式取数据 -->
+      <!-- 方式二 -->
+        <tr>
+            <td>{{res.data.stu_id}}</td>
+            <td>{{res.data.name}}</td>
+            <td>{{res.data.age}}</td>
+            <td>{{res.data.score}}</td>
+        </tr>
+
+    </table>
+  {% else %}
+  <div>失败:{{res}}</div>
+  {% endif %}
+<!-- 提供一个返回首页的路由 -->
+  <a href="/">首页</a>
+</body>
+</html>

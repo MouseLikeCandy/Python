@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询页面</title>
+    <!-- 解决页面图标显示问题 -->
+    <link rel="shortcut icon" href="static/favicon.ico">
+</head>
+<body>
+    <h1>查询学生</h1><br/>
+    <!-- 使用模板语言 for + table 标签完成数据的展示 -->
+    {{res}}
+    <hr/>
+    {{res.msg}}
+    {% if res.msg == 'OK' %}
+    <table border="1px" cellpadding="0px" cellspacing="0px" width="300px">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>成绩</th>
+        </tr>
+        {% for stu in res.data %}
+        <tr>
+            <td>{{stu.stu_id}}</td>
+            <td>{{stu.name}}</td>
+            <td>{{stu.age}}</td>
+            <td>{{stu.score}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <!-- 提供一个返回首页的路由 -->
+    <a href="/">首页</a>
+</body>
+</html>

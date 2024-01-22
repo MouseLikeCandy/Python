@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单上传</title>
+</head>
+<body>
+    <h1>文件上传</h1>
+    <!-- encryption type 加密类型  大文件需要切割多部分 -->
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="upload_file">
+        <input type="submit" value="上传">
+    </form>
+<br/>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示页面</title>
+</head>
+<body>
+  <h1>模板登录页面</h1>
+  <form action="/" method="post">
+      <!--action='#' 其实就是 / 根路由-->
+      <div>用户: <input type="text" name="user" value="{{user}}"></div>  <!-- 记住用户名 -->
+      <div>密码: <input type="password" name="pwd"></div>
+      <div><input type="submit" value="登录"></div>
+  </form>
+<!-- 服务端返回了数据给客户端, 客户端如何显示服务端返回的数据呢? {{key}}名称是msg-->
+  <div>{{msg}}</div>    <!--模板语言的格式(两个花括号)-->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分支模板</title>
+</head>
+<body>
+<!-- 模板的判断,数据从服务端传过来 -->
+{{name}}<br/>
+<!-- 模板语言的分支判断 -->
+{% if gender == 'F' %}
+女
+{% else %}
+男
+{% endif %}
+{{gender}}<br/>
+
+{% if age >= 18 %}
+成年人
+{% elif age>=12 %}
+少年
+{% else %}
+儿童
+{% endif %}
+
+{{age}}<br/>
+</body>
+</html>

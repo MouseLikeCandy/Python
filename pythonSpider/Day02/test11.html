@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form表单 用户注册</title>
+</head>
+<body>
+    <!-- get请求在浏览器里面拼接,post请求不显示 涉及安全性-->
+    <form action="提交的地址" method="get/post" name="该表单的名称"></form>
+    <!--action:# 代表当前页,或者不写-->
+
+    <!--container 容器-->
+    <div id="container">
+        <h1>用户注册</h1>
+        <hr/>
+        <!-- 之后就是用户需要填写数据,而这些数据最终需要提交给服务器,就要写form表单 -->
+        <form action="#" method="get" name="register_form">
+            <!-- 为了布局好看,使用table标签实现左右两边的布局 -->
+            <table>
+                <!-- 第一行-->
+                <tr>
+                    <!-- label + for 配合后面的input标签的id,实现点击定位-->
+                    <td><label for="username">用户名</label></td>
+                    <!-- input输入框,type="test" 输入的是文本内容,placeholder占位文字
+                    name名称对应的值最终会被服务端作为取数据的key来使用-->
+                    <td><input type="text" id="username" name="username" placeholder="请输入用户名"/></td>
+                </tr>
+                <!-- 第二行-->
+                <tr>
+                    <td><label for="pwd">密码:</label></td>
+                    <td><input type="password" id="pwd" name="pwd" placeholder="请输入密码"/></td>
+                </tr>
+                <!-- 第三行-->
+                <tr>
+                    <td><label for="gender">性别:</label></td>
+                    <!--单选框 type="radio"-->
+                    <!-- checked="checked"表示默认选中该选项, value="M"如果用户选择的是男,则提交的数据为'M'-->
+                    <td>
+                        <input type="radio" id="gender" name="gender" checked="checked" value="M"/>男
+                        <input type="radio" name="gender"value="F"/>女
+                    </td>
+                </tr>
+                <!-- 第四行-->
+                <tr>
+                    <td><label for="hobby">爱好:</label></td>
+                    <!-- 复选框 -->
+                    <!-- id具有唯一性-->
+                    <td>
+                        <input type="checkbox" id="hobby" name="hobby" value="basketball"/>篮球
+                        <input type="checkbox" name="hobby" value="basketball"/>足球
+                        <input type="checkbox" name="hobby" value="swimming" checked="checked"/>游泳
+                        <input type="checkbox" name="hobby" value="fitness" checked/>健身
+                    </td>
+                </tr>
+                <!-- 第五行-->
+                <tr>
+                    <!--选项框 下拉框-->
+                    <!-- 公平: ①共同富裕 ②教育公平是社会最大的公平 ③最好的投资是什么? 投资自己的发展 -->
+                    <td><label for="edu">学历</label></td>
+                    <td>
+                        <select name="edu" id="edu">
+                            <option value="zk">专科</option>
+                            <option value="bk">本科</option>
+                            <option value="yjs">研究生</option>
+                            <option value="bs">博士</option>
+                            <option value="ls" selected="selected">烈士</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- 第六行-->
+                <tr>
+                    <td><label for="photo">照片</label></td>
+                    <!-- type="file" 打开文件的资源管理器 提交资源的路径-->
+                    <td><input type="file" id="photo" name="photo"/></td>
+                </tr>
+                <!-- 第七行-->
+                <tr>
+                    <td><label for="profile">个人简介:</label></td>
+                    <td>
+                        <!-- 文本域 10行 30列-->
+                        <!-- CSS代码实现文本区域不可伸缩 style='resize:none' -->
+                        <textarea name="profile" id="profile" cols="30" rows="10" style='resize:none'>默认文字</textarea>
+                    </td>
+                </tr>
+                <!-- 第八行-->
+                <tr>
+                    <td></td>   <!-- 空着 -->
+                    <td>
+                        <!-- type='submit' 将数据提交给服务器, value表示输入需要显示的文字-->
+                        <input type="submit" value="注册"/>
+                        <input type="reset" value="清空"/>
+                        <input type="button" value="按钮"/><!-- 普通按钮,一般配合JS实现效果-->
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

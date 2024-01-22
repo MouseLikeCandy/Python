@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更新页面</title>
+    <!-- 解决页面图标显示问题 -->
+    <link rel="shortcut icon" href="static/favicon.ico">
+</head>
+<body>
+    <h1>更新学生</h1>
+    {% if res.msg == 'OK' %}
+    <!-- 查询成功 stu_id 存在 -->
+    <form action="/update" method="post">
+        <table>
+            <tr>
+                <td><label for="stu_id2">学号:</label></td>
+                <!-- readonly 无法修改和删除 -->
+                <td><input type="text" id="stu_id2" name="stu_id" value="{{res.data.stu_id}}" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="name">姓名:</label></td>
+                <td><input type="text" id="name" name="name" value="{{res.data.name}}"/></td>
+            </tr>
+            <tr>
+                <td><label for="age">年龄:</label></td>
+                <td><input type="text" id="age" name="age" value="{{res.data.age}}"/></td>
+            </tr>
+            <tr>
+                <td><label for="score">成绩:</label></td>
+                <td><input type="text" id="score" name="score" value="{{res.data.score}}"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="更新"></td>
+            </tr>
+
+        </table>
+    </form>
+    {% else %}
+    <div style="color: red;">{{res}}</div>
+    <!-- 程序第一次访问, 没有stu_id -->
+    <form action="/update.html" method="get">
+        <table>
+            <tr>
+                <td><label for="stu_id">学号:</label></td>
+                <td><input type="text" id="stu_id" name="stu_id" placeholder="请输入需要更新的学生学号..."></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="更新"></td>
+            </tr>
+        </table>
+    </form>
+    {% endif %}
+<!-- 提供一个返回首页的路由 -->
+    <a href="/">首页</a>
+</body>
+</html>

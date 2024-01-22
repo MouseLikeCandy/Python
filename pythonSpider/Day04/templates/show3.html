@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环模板</title>
+</head>
+<body>
+    <h1>学生名单</h1>
+    {{stus}}
+
+<!-- 将数据填充到table表格中实现显示 -->
+    <table border="1px" width="300px" cellspacing="1px" cellpadding="1px">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>备注</th>
+        </tr>
+        <!-- 数据有几行,表格就需要显示几行-->
+        {% for stu in stus %}
+        <tr>
+            <td>{{stu.name}}</td>
+            <td>{{stu.age}}</td>
+            <td>{{stu.gender}}</td>
+
+            {% if stu.age >= 18 %}
+            <td>成年</td>
+            {% else %}
+            <td>未成年</td>
+            {% endif %}
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

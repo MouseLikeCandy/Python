@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "E:/PythonProject/exam/study_exception.py", line 50, in <module>
+    _ = l[num]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "E:/PythonProject/exam/study_exception.py", line 50, in <module>
+    _ = l[num]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "E:/PythonProject/exam/study_exception.py", line 50, in <module>
+    _ = l[num]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "E:/PythonProject/exam/study_exception.py", line 50, in <module>
+    _ = l[num]
+IndexError: list index out of range

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加页面</title>
+    <!-- 解决页面图标显示问题 -->
+    <link rel="shortcut icon" href="static/favicon.ico">
+</head>
+<body>
+    <h1>添加学生</h1>
+    <!-- 一旦表单被提交,就会向服务端发送一个/add的post请求,并将数据传送给服务端 -->
+    <form action="/add" method="post">
+        <table>
+            <tr>
+                <td><label for="stu_id">学号:</label></td>
+                <td><input type="text" id="stu_id" name="stu_id" placeholder="请输入学号..."/></td>
+            </tr>
+            <tr>
+                <td><label for="name">姓名:</label></td>
+                <td><input type="text" id="name" name="name" placeholder="请输入姓名..."/></td>
+            </tr>
+            <tr>
+                <td><label for="age">年龄:</label></td>
+                <td><input type="text" id="age" name="age" placeholder="请输入年龄..."/></td>
+            </tr>
+            <tr>
+                <td><label for="score">成绩:</label></td>
+                <td><input type="text" id="score" name="score" placeholder="请输入成绩..."/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="添加"></td>
+            </tr>
+        </table>
+    </form>
+<!-- 提供一个返回首页的路由 -->
+    <a href="/">首页</a>
+</body>
+</html>
