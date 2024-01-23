@@ -8,7 +8,8 @@
 """
 import os
 
-# 生成一系列操作的代码
+# playwright
+# 先手动操作一遍，然后playwright会按之前的动作生成一系列操作的代码
 os.system('playwright codegen -o E:\Python\BookPython3\Chapter7JavaScript动态渲染页面爬取\PLAYWRIGHT_script.py -b webkit')
 
 print('playwright codegen -o PLAYWRIGHT_script.py -b webkit')
